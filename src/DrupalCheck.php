@@ -63,6 +63,7 @@ class DrupalCheck extends AbstractExternalTask
         return TaskResult::createSkipped($this, $context);
     }
     $arguments = $this->processBuilder->createArgumentsForCommand('drupal-check');
+    $arguments->add('--analysis');
     $arguments->add('--deprecations');
     $arguments->add('--no-progress');
     $arguments->addOptionalArgument('--drupal-root=%s', $options['drupal_root']);
